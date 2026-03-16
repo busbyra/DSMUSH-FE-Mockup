@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Shadows MUSH</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid min-vh-100 d-flex flex-column wrapper">
+        <!-- Navigation -->
+        <nav class="row mt-4 mb-5 align-items-center top-nav px-4">
+            <div class="col-md-8">
+                <ul class="nav">
+                    <li class="nav-item nav-bracket me-3">
+                        <a class="nav-link active fw-bold text-white" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item nav-bracket me-3">
+                        <a class="nav-link fw-bold" href="#">CHARACTERS</a>
+                    </li>
+                    <li class="nav-item nav-bracket me-3">
+                        <a class="nav-link fw-bold" href="#">HELP</a>
+                    </li>
+                    <li class="nav-item nav-bracket me-3">
+                        <a class="nav-link fw-bold" href="#">WIKI</a>
+                    </li>
+                    <li class="nav-item nav-bracket">
+                        <a class="nav-link fw-bold" href="#">PLAY NOW</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-outline-success btn-nav px-4 me-2">LOG IN</button>
+                <button class="btn btn-outline-success btn-nav px-4">REGISTER</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow-1 container pb-5">
+            <!-- System Status & Hero Title -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-4 system-status fw-bold">
+                    <div>[SYSTEM STATUS: <span class="text-white">ONLINE</span>]</div>
+                    <div>[GRID LINK: <span class="text-white">ACTIVE</span>]</div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h1 class="text-uppercase display-1 lh-1 m-0 text-shadow-glow">
+                        DEEP SHADOWS MUSH
+                    </h1>
+                </div>
+                <div class="col-md-4 system-status text-end fw-bold">
+                    <div>[RUNNERS ON-GRID: <span class="text-white">no one</span>]</div>
+                    <div>[LAST SEEN: <span class="text-white">Kassien - 15m ago</span> ]</div>
+                </div>
+            </div>
+
+            <!-- Two Columns content -->
+            <div class="row mt-4 px-2 g-5 align-items-stretch">
+                <!-- Left Column (Terminal) -->
+                <div class="col-md-6">
+                    <div class="card terminal-box h-100 p-4">
+                        <div class="terminal-body brighter-text">
+                            <p>> INCOMING TRANSMISSION: MR. JOHNSON...</p>
+                            <p>> "We have a job. A Saeder-Krupp shipment is moving tonight. Watch out for Lone Star patrols."</p>
+                            <p>> DECRYPTING FILE...</p>
+                            <p>> ESTABLISHING SECURE CONNECTION...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (Jack In) -->
+                <div class="col-md-6">
+                    <div class="card terminal-box h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+                        <button class="btn btn-primary jack-in-btn btn-lg w-75 mb-5 fw-bold fs-4 py-3">
+                            [ JACK IN ]
+                        </button>
+
+                        <div class="text-center w-100 d-flex flex-column gap-3 fw-bold fs-5 menu-links">
+                            <a href="#">[BIOMETRIC ENROLLMENT]</a>
+                            <a href="#">[RUNNER DATABASE]</a>
+                            <a href="#">[COMMAND LINE CONSOLE]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-auto py-3 border-top matrix-border text-center small footer-text">
+            "Warning: Unauthorized access to Grid 22546 is a violation of Corporate Court Regulation 42-B. Lethal IC is active. (C) 2081 NeoNET"
+        </footer>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

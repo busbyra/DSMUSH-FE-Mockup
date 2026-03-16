@@ -1,0 +1,256 @@
+/* Deep Shadows MUSH - Matrix Aesthetic Overrides */
+:root {
+    --matrix-green: #00FF41;
+    --darker-green: #003B00;
+    --bg-black: #050505;
+    --terminal-font: 'Courier Prime', 'Courier New', Courier, monospace;
+    --heading-font: 'Red Hat Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-black) !important;
+    color: var(--matrix-green) !important;
+    font-family: var(--terminal-font);
+    /* Scanline effect */
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+}
+
+.wrapper {
+    /* To ensure body text is clear */
+    text-shadow: 0px 0px 1px rgba(0, 255, 65, 0.3);
+}
+
+/* Make standard Bootstrap cards look like Data Blocks */
+.card, .well, .panel {
+    background-color: rgba(0, 20, 0, 0.8) !important;
+    border: none !important;
+    border-radius: 0px !important; /* Cyberpunk is angular, not round */
+    box-shadow: none;
+}
+
+/* Style the links to glow on hover */
+a {
+    color: var(--matrix-green);
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--darker-green);
+}
+
+a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--matrix-green);
+    background: var(--darker-green);
+}
+
+/* Transform the "Play Now" button into a "Jack In" button */
+.btn-primary, .btn-success, .btn-outline-success {
+    background-color: transparent !important;
+    border: 2px solid var(--matrix-green) !important;
+    color: var(--matrix-green) !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 0; /* Angular */
+    font-family: var(--terminal-font);
+    box-shadow: 0 0 10px var(--darker-green) inset, 0 0 10px var(--darker-green);
+}
+
+.btn-primary:hover, .btn-outline-success:hover {
+    background-color: var(--matrix-green) !important;
+    color: var(--bg-black) !important;
+    box-shadow: 0 0 20px var(--matrix-green);
+}
+
+/* Terminal Header */
+.terminal-header {
+    font-family: var(--terminal-font);
+}
+
+/* Custom "Terminal Cursor" effect for headers */
+.terminal-header::after, .system-status::after {
+    /* Disabled blinking cursor globally as it's not strictly in mockup, but leaving comment */
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* --- Glitch Text for Headlines (e.g., DEEP SHADOWS) --- */
+.glitch-text {
+    font-family: var(--heading-font); /* Must have a bold, clean font */
+    position: relative;
+    display: inline-block;
+    color: var(--matrix-green); /* Use your matrix green variable */
+    text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green);
+    letter-spacing: -2px;
+}
+
+/* Base text (glowing green) */
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text); /* This allows the CSS to use the original text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    white-space: pre-line; /* Handle \n */
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1; /* Magenta shadow */
+    background: transparent; /* Must match background to mask the text - using transparent here for \n to work on multi-line */
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-1 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9; /* Cyan shadow */
+    background: transparent;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-2 5s infinite linear alternate-reverse;
+}
+
+/* Bright title glow */
+.text-shadow-glow {
+    font-family: var(--heading-font);
+    color: var(--matrix-green);
+    text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green);
+    letter-spacing: -2px;
+}
+
+/* Brighter Text for specific areas */
+.brighter-text {
+    color: #00cc33; /* Slightly darker green than before, but legible */
+    text-shadow: 0 0 5px var(--matrix-green);
+    line-height: 1.6;
+}
+
+/* Custom styles for matching the layout */
+
+/* Top Navigation Brackets */
+.nav-bracket {
+    position: relative;
+    padding: 0 5px;
+}
+.nav-link {
+    color: var(--matrix-green) !important;
+}
+.nav-link.active {
+    color: #fff !important;
+}
+.nav-bracket::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--matrix-green);
+    border-left: 2px solid var(--matrix-green);
+}
+.nav-bracket::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid var(--matrix-green);
+    border-right: 2px solid var(--matrix-green);
+}
+.nav-bracket a {
+    text-shadow: none;
+    padding: 5px 10px;
+}
+.nav-bracket a.active {
+    color: #fff !important;
+}
+
+/* System Status text */
+.system-status {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Terminal Boxes with Cyber Corners */
+.terminal-box {
+    position: relative;
+    /* Removed transparent override so it uses the card background from above */
+}
+
+/* The glowing inner content box */
+.terminal-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* Optional: faint background to distinguish box area */
+}
+
+/* Four Corner Brackets for main boxes */
+.terminal-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    /* We use multiple background gradients to create the corner brackets */
+    background:
+        /* Top Left */
+        linear-gradient(to right, var(--matrix-green) 20px, transparent 20px) 0 0,
+        linear-gradient(to bottom, var(--matrix-green) 20px, transparent 20px) 0 0,
+        /* Top Right */
+        linear-gradient(to left, var(--matrix-green) 20px, transparent 20px) 100% 0,
+        linear-gradient(to bottom, var(--matrix-green) 20px, transparent 20px) 100% 0,
+        /* Bottom Left */
+        linear-gradient(to right, var(--matrix-green) 20px, transparent 20px) 0 100%,
+        linear-gradient(to top, var(--matrix-green) 20px, transparent 20px) 0 100%,
+        /* Bottom Right */
+        linear-gradient(to left, var(--matrix-green) 20px, transparent 20px) 100% 100%,
+        linear-gradient(to top, var(--matrix-green) 20px, transparent 20px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: 2px 20px, 20px 2px; /* Set width and height of border segments */
+}
+
+.terminal-box p {
+    margin-bottom: 0.8rem;
+}
+
+.matrix-hr {
+    border-top: 1px dashed var(--matrix-green);
+    opacity: 0.3;
+    margin: 1.5rem 0;
+}
+
+/* Jack In Button specific */
+.jack-in-btn {
+    font-size: 1.5rem !important;
+    text-shadow: 0 0 10px var(--matrix-green);
+    box-shadow: 0 0 20px var(--darker-green) inset, 0 0 15px var(--matrix-green) !important;
+}
+
+/* Menu links in Jack In Box */
+.menu-links a {
+    letter-spacing: 1px;
+}
+
+/* Footer Styling */
+.matrix-border {
+    border-color: var(--matrix-green) !important;
+    border-top-width: 2px !important;
+}
+.footer-text {
+    color: var(--matrix-green);
+}
