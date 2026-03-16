@@ -115,15 +115,19 @@ a:hover {
     animation: glitch-anim-2 5s infinite linear alternate-reverse;
 }
 
-/* The actual "flicker" animation */
-@keyframes glitch-anim-1 {
-    0% { clip: rect(2px, 9999px, 4px, 0); }
-    100% { clip: rect(81px, 9999px, 82px, 0); }
+/* Bright title glow */
+.text-shadow-glow {
+    font-family: var(--heading-font);
+    color: var(--matrix-green);
+    text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green);
+    letter-spacing: -2px;
 }
 
-@keyframes glitch-anim-2 {
-    0% { clip: rect(110px, 9999px, 112px, 0); }
-    100% { clip: rect(25px, 9999px, 30px, 0); }
+/* Brighter Text for specific areas */
+.brighter-text {
+    color: #4dff79; /* Brighter, whiter green */
+    text-shadow: 0 0 5px var(--matrix-green);
+    line-height: 1.6;
 }
 
 /* Custom styles for matching the layout */
