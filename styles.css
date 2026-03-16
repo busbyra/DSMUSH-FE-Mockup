@@ -125,7 +125,7 @@ a:hover {
 
 /* Brighter Text for specific areas */
 .brighter-text {
-    color: #4dff79; /* Brighter, whiter green */
+    color: #00cc33; /* Slightly darker green than before, but legible */
     text-shadow: 0 0 5px var(--matrix-green);
     line-height: 1.6;
 }
